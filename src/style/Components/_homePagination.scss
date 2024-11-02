@@ -1,0 +1,74 @@
+.homePagination{
+    width: 100%;
+    height: 80vh;
+    background-color: $grey-bg;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .pagination{
+        position: absolute;
+        left: -2.5rem;
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            
+
+            li{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                height: 2.5rem;
+                gap: .5rem;
+                
+                color: $grey-text-colour;
+                
+                p{
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+                .line{
+                    position: absolute;
+                    z-index: 3;
+                    width: 1rem;
+                    height: 3rem;
+                    height: .1rem;
+                    background-color: $grey-text-colour;
+                   transition: linear .2s;
+                   transform: translateX(1.5rem);
+                }
+
+                &:hover{
+                    overflow-x: visible;
+                    color: $black-colour;
+    
+                    .line{
+                        background-color: $black-colour;
+                        width: 7rem;
+                    }
+                }
+
+                &.active{
+                    color: $black-colour;
+
+                    .line{
+                        background-color: $black-colour;
+                        width: 7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes linear {
+    0%{
+        width: 2rem;
+    }
+
+    100%{
+        width: 7rem;
+    }
+}
