@@ -188,6 +188,7 @@ nav ul a:hover {
   bottom: -4rem;
   width: 12rem;
   height: 4rem;
+  z-index: 20;
   display: flex;
   align-items: center;
   text-align: center;
@@ -427,32 +428,28 @@ footer .socialMedia p {
 .homePagination {
   width: 100%;
   height: 80vh;
-  background-color: #f7f6f6;
   position: relative;
   display: flex;
   align-items: center;
+  background-color: rgb(243, 243, 243);
 }
 .homePagination .pagination {
   position: absolute;
   left: -2.5rem;
-}
-.homePagination .pagination ul {
   display: flex;
   flex-direction: column;
-}
-.homePagination .pagination ul li {
-  display: flex;
   align-items: center;
-  cursor: pointer;
-  height: 2.5rem;
-  gap: 0.5rem;
-  color: #929292;
+  gap: 1rem;
 }
-.homePagination .pagination ul li p {
+.homePagination .pagination button {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   font-weight: 500;
+  font-size: 1rem;
+  color: #929292;
 }
-.homePagination .pagination ul li .line {
+.homePagination .pagination button .line {
   position: absolute;
   z-index: 3;
   width: 1rem;
@@ -460,22 +457,98 @@ footer .socialMedia p {
   height: 0.1rem;
   background-color: #929292;
   transition: linear 0.2s;
-  transform: translateX(1.5rem);
+  transform: translate(1.5rem, -0.8rem);
 }
-.homePagination .pagination ul li:hover {
+.homePagination .pagination button .line.active {
+  transition: 0.4 linear ease-in-out;
+  background-color: #080808;
+  width: 5rem;
+}
+.homePagination .pagination button:hover {
   overflow-x: visible;
   color: #080808;
 }
-.homePagination .pagination ul li:hover .line {
+.homePagination .pagination button:hover .line {
   background-color: #080808;
-  width: 7rem;
+  width: 5rem;
 }
-.homePagination .pagination ul li.active {
+.homePagination .pagination button.active {
   color: #080808;
 }
-.homePagination .pagination ul li.active .line {
+.homePagination .pagination button.active .line {
   background-color: #080808;
   width: 7rem;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+.paginationContent {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  padding-inline: 4rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.paginationContent .text {
+  padding-bottom: 4rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.paginationContent .text h3 {
+  color: #080808;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  display: inline-flex;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+}
+.paginationContent .text p {
+  font-size: 1rem;
+  color: #999;
+}
+.paginationContent .metalChair {
+  height: 100% !important;
+}
+.paginationContent .metalChair img {
+  bottom: 2rem !important;
+}
+.paginationContent .img {
+  position: absolute;
+  right: 4rem;
+  height: 130%;
+  width: 40%;
+  display: flex;
+  gap: 3rem;
+}
+.paginationContent .img.lights {
+  display: flex;
+  height: 90%;
+  gap: 2rem;
+  top: 0;
+  justify-content: space-between;
+}
+.paginationContent .img.lights img {
+  top: -20% !important;
+  width: 45%;
+  position: relative;
+}
+.paginationContent .img img {
+  position: absolute;
+  right: 0;
+  bottom: -30%;
+  height: 100%;
+  width: 100%;
 }
 
 @keyframes linear {
@@ -484,5 +557,80 @@ footer .socialMedia p {
   }
   100% {
     width: 7rem;
+  }
+}
+@media (max-width: 1024px) {
+  .homePagination {
+    justify-content: center;
+  }
+  .homePagination .pagination {
+    bottom: 1rem;
+    left: 50%;
+    flex-direction: row;
+    z-index: 5;
+  }
+  .homePagination .pagination button {
+    background-color: #080808;
+    width: 0.5rem;
+    height: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #080808 !important;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .homePagination .pagination button.active {
+    width: 1rem;
+    height: 1rem;
+  }
+  .homePagination .pagination button .line {
+    display: none;
+  }
+  .paginationContent .metalChair {
+    height: 90% !important;
+    width: 50%;
+    right: 0rem;
+  }
+  .paginationContent .metalChair img {
+    bottom: 2rem !important;
+  }
+  .paginationContent .lights {
+    display: flex;
+    height: 90%;
+    width: 50%;
+    gap: 2rem;
+    top: 0;
+    right: 0rem;
+    justify-content: space-between;
+  }
+  .paginationContent .lights img {
+    top: -20% !important;
+    width: 40%;
+    position: relative;
+  }
+  .paginationContent .img {
+    right: 1rem;
+  }
+  .paginationContent .img img {
+    position: absolute;
+    right: 0rem;
+    bottom: -30%;
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .paginationContent {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .paginationContent .text {
+    width: 100%;
+  }
+  .paginationContent .img {
+    width: 100%;
+    height: 70%;
   }
 }/*# sourceMappingURL=main.css.map */

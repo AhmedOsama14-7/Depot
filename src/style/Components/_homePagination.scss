@@ -1,42 +1,43 @@
 .homePagination{
     width: 100%;
     height: 80vh;
-    background-color: $grey-bg;
     position: relative;
     display: flex;
     align-items: center;
-
+  background-color: rgb(243, 243, 243);
     .pagination{
         position: absolute;
         left: -2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
 
-        ul{
-            display: flex;
-            flex-direction: column;
-            
+        button{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+            color: $grey-text-colour;
 
-            li{
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                height: 2.5rem;
-                gap: .5rem;
-                
-                color: $grey-text-colour;
-                
-                p{
-                    cursor: pointer;
-                    font-weight: 500;
-                }
+        
+        
                 .line{
                     position: absolute;
                     z-index: 3;
                     width: 1rem;
                     height: 3rem;
-                    height: .1rem;
+                    height: .1rem; 
                     background-color: $grey-text-colour;
-                   transition: linear .2s;
-                   transform: translateX(1.5rem);
+                    transition: linear .2s;
+                    transform: translate(1.5rem,-.8rem);
+
+                    &.active{
+                        transition: .4 linear ease-in-out;
+                        background-color: $black-colour;
+                        width: 5rem;
+                    }
                 }
 
                 &:hover{
@@ -45,7 +46,7 @@
     
                     .line{
                         background-color: $black-colour;
-                        width: 7rem;
+                        width: 5rem;
                     }
                 }
 
@@ -58,11 +59,89 @@
                     }
                 }
             }
+            } 
+        }
+    
+
+.content{
+    width: 100%;
+    height: 100%;
+}
+.paginationContent{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    padding-inline: 4rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    .text{
+        padding-bottom: 4rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        gap: 1.5rem;
+        h3{
+            color: $black-colour;
+            font-size: 2rem;
+            letter-spacing: .2rem;
+            
+            font-weight: 600;
+            display: inline-flex;
+            flex-wrap: wrap;
+            
+            text-transform: uppercase;
+        }
+        
+        p{
+            font-size: 1rem;
+            color: #999;
         }
     }
+    .metalChair{
+        height: 100% !important;
+        
+        img{
+            bottom: 2rem !important;
+        }
+    }
+
+    
+    .img{
+        position: absolute;
+        right: 4rem;
+        height: 130%;
+        width: 40%;
+        display: flex;
+        gap: 3rem;
+
+        &.lights{
+            display: flex;
+            height: 90%;
+            gap: 2rem;
+            top: 0;
+            justify-content: space-between;
+            & img{
+                top: -20% !important;
+                width: 45%;
+                position: relative;
+            }
+        }
+        img{
+            position: absolute;
+            right: 0;
+            bottom: -30%;
+            height:100%;
+            width: 100%;
+            // object-fit: cover;
+        }
+
+    }
 }
-
-
 @keyframes linear {
     0%{
         width: 2rem;
@@ -70,5 +149,92 @@
 
     100%{
         width: 7rem;
+    }
+}
+
+@media (max-width:1024px) {
+    .homePagination{
+        justify-content: center;
+        .pagination{
+            bottom: 1rem;
+            left: 50%;
+            flex-direction: row;
+            z-index: 5;
+            button{
+                background-color: $black-colour;
+                width: .5rem;
+                height: .5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $black-colour !important;
+                border-radius: 50%;
+                overflow: hidden;
+                &.active{
+                    width: 1rem;
+                    height: 1rem;
+                }
+                .line{
+                    display: none;
+                }
+            }
+        }
+    }
+.paginationContent{
+
+    
+        
+        .metalChair{
+            height: 90% !important;
+            width: 50%;
+            right: 0rem;
+            
+            img{
+                bottom: 2rem !important;
+            }
+        }
+    
+        .lights{
+            display: flex;
+            height: 90%;
+            width: 50%;
+            gap: 2rem;
+            top: 0;
+            right: 0rem;
+            justify-content: space-between;
+            img{
+                top: -20% !important;
+                width: 40%;
+                position: relative;
+            }
+        }
+       .img{
+            right: 1rem;
+           img{
+                position: absolute;
+                right: 0rem;
+                bottom: -30%;
+                height:100%;
+                width: 100%;
+            // object-fit: cover;
+        }
+    }
+    }
+}
+
+@media (max-width: 600px) {
+    .paginationContent{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+       justify-content: flex-start;
+
+        .text{
+            width: 100%;
+        }
+
+        .img{
+            width: 100%;
+            height: 70%;
+        }
     }
 }
