@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaXmark } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
+import { CiHeart } from "react-icons/ci";
 export default function SideMenu({ isOpen, toggleMenu }) {
   return (
     <div className={`SideMenu ${isOpen ? "open" : "close"}`}>
@@ -12,7 +13,7 @@ export default function SideMenu({ isOpen, toggleMenu }) {
         </li>
 
         <li>
-          <NavLink to={"/"}>Shop</NavLink>
+          <NavLink to={"/shop"}>Shop</NavLink>
         </li>
 
         <li>
@@ -26,6 +27,12 @@ export default function SideMenu({ isOpen, toggleMenu }) {
           <NavLink to={"/"}>Cart</NavLink>
           <p>($0)</p>
         </li>
+
+        <li>
+          <CiHeart />
+          <NavLink to={"/"}>Wishlist</NavLink>
+        </li>
+
         <li>
           <FaRegUser />
           <NavLink to={"/"}>Login</NavLink>

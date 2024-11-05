@@ -11,10 +11,11 @@ export default function Layout() {
         <main>
 
         <Outlet></Outlet>
-        </main>
+
         <div className='topArrow'>
         <IoIosArrowUp />
         </div>
+        </main>
         <Footer></Footer>
     </Fragment>
   )

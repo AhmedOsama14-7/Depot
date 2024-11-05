@@ -1,8 +1,11 @@
 html {
   font-size: 18px;
+  overflow-x: hidden;
+}
+body{
+
   margin-top: 1rem;
   margin-inline: 4rem;
-  overflow-x: hidden;
 }
 h1 {
   font-size: 2.5rem;
@@ -60,6 +63,9 @@ p {
   html {
     font-size: 12px;
 
+  }
+  body{
+    
     margin-inline: 3rem;
   }
 }
@@ -67,6 +73,10 @@ p {
   html {
     font-size: 10px;
 
+  }
+  
+  body{
+    
     margin-inline: 2rem;
   }
 }

@@ -36,7 +36,7 @@
                     &.active{
                         transition: .4 linear ease-in-out;
                         background-color: $black-colour;
-                        width: 5rem;
+                        width: 3rem;
                     }
                 }
 
@@ -46,7 +46,7 @@
     
                     .line{
                         background-color: $black-colour;
-                        width: 5rem;
+                        width: 4rem;
                     }
                 }
 
@@ -55,7 +55,7 @@
 
                     .line{
                         background-color: $black-colour;
-                        width: 7rem;
+                        width: 4rem;
                     }
                 }
             }
@@ -133,8 +133,8 @@
         }
         img{
             position: absolute;
-            right: 0;
             bottom: -30%;
+            
             height:100%;
             width: 100%;
             // object-fit: cover;
@@ -210,10 +210,9 @@
         }
        .img{
             right: 1rem;
-           img{
-                position: absolute;
-                right: 0rem;
-                bottom: -30%;
+            img{
+               right: 0rem;
+               bottom: -30%;
                 height:100%;
                 width: 100%;
             // object-fit: cover;
@@ -223,18 +222,45 @@
 }
 
 @media (max-width: 600px) {
+
+    .homePagination{
+       width: 105dvw;
+       height: 70vh;
+       position: relative;
+       left: -3rem;
+    }
     .paginationContent{
+        display: flex;
         flex-direction: column-reverse;
-        align-items: flex-start;
-       justify-content: flex-start;
+        align-items: center;
+       
+       
 
         .text{
             width: 100%;
         }
 
         .img{
-            width: 100%;
+            top: 0;
             height: 70%;
+            right: 30%;
+            &.lights{
+                width: 50%;
+                height: 80%;
+                right: 20%;
+              
+            }
+
+            &.metalChair{
+                height: 70% !important;
+                width: 60%;
+                top: 0;
+                right: 18%;
+            }
+
+            img{
+                top: 0;
+            }
         }
     }
 }

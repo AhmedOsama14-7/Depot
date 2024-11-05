@@ -5,7 +5,7 @@ import { FaRegUser } from "react-icons/fa";
 import "animate.css";
 import { FaBars } from "react-icons/fa6";
 import SideMenu from "../sideMenu/SideMenu";
-
+import { CiHeart } from "react-icons/ci";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,6 +32,10 @@ export default function Navbar() {
           <div className="cartItems animate__animated animate__fadeIn animate__fast">
             <p>No product in the cart</p>
           </div>
+        </div>
+
+        <div className="wishlist">
+        <CiHeart />
         </div>
 
         <div className="acountContainer">

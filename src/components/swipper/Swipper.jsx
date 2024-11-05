@@ -42,7 +42,7 @@ const MySwiper = () => {
       <Swiper
         ref={swiperRef}
        onSlideChange={handleSlideChange}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        // autoplay={{ delay: 3000, disableOnInteraction: false }}
         spaceBetween={30}
         slidesPerView={1}
         loop={true}

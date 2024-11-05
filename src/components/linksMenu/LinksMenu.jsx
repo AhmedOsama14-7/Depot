@@ -10,7 +10,7 @@ export default function LinksMenu() {
         </li>
 
         <li>
-            <NavLink to={"/"}>Shop</NavLink>
+            <NavLink to={"/shop"}>Shop</NavLink>
         </li>
 
         <li>

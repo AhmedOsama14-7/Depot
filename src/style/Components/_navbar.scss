@@ -89,6 +89,18 @@ nav {
   .cartContainer:hover .cartItems {
     display: flex;
   }
+  
+  .wishlist{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    svg{
+      height:1rem;
+      width: 1rem;
+      cursor: pointer;
+    }
+  }
   .acountContainer {
     display: flex;
     gap: 0.5rem;
@@ -115,7 +127,9 @@ nav {
   display: none;
   position: absolute;
   right: 1rem;
-
+  a{
+    display: flex;
+  }
   p{
     font-size: 1.25rem;
     font-weight: 700;

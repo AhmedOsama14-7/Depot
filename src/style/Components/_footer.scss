@@ -9,14 +9,14 @@ footer {
 
   .menuContainer {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    gap: 7rem;
     
 
     .footerList {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-
       .listHeader {
         font-weight: 700;
         text-transform: uppercase;
