@@ -3,7 +3,6 @@ header {
   height: 5.5rem;
   display: flex;
   justify-content: center;
-  position: relative;
   align-items: center;
   background-color: white;
   .logo {
@@ -48,7 +47,7 @@ nav {
   font-weight: 700;
   position: absolute;
   right: 0;
-  margin-right: 1.5rem;
+ 
   .cartContainer {
     display: flex;
     align-items: center;
@@ -70,7 +69,6 @@ nav {
     bottom: -4rem;
     width: 12rem;
     height: 4rem;
-    z-index: 20;
     display: flex;
     align-items: center;
     text-align: center;
@@ -88,6 +86,7 @@ nav {
   }
   .cartContainer:hover .cartItems {
     display: flex;
+    z-index: 55555;
   }
   
   .wishlist{

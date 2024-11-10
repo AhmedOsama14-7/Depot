@@ -1,31 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
+import QuickLook from '../quickLook/QuickLook';
+import { NavLink } from 'react-router-dom';
+export default function ProductCard({name , sale , price , salePrec , img , rating , slug , category,isNew , product }) {
+   const [active ,SetActive] = useState(false)
 
-export default function ProductCard() {
+    function open (){
+        SetActive(true)
+    }
   return (
+<>
     <div className='productCard'>
+    <NavLink to={`/shop/singleProduct/${slug}`}>
         <div className="img">
-            <img src='https://depot.qodeinteractive.com/wp-content/uploads/2017/01/h1-product-2-600x728.jpg' alt=''></img>
+            <img src={img} alt={slug}></img>
             <div className="header">
-            <p>New!</p>
-            <p>15%</p>
+            <p>{isNew ? `New` : ""}</p>
+            
+            <p>{salePrec ? `${salePrec} %`  : ""}</p>
             </div>
             
             <div className="quickLook">
-                <p>quick look</p>
+                <div className='quickLookBtn'>
+
+                <p onClick={open}>quick look</p>
+                </div>
+
+                
                 <div className="heart">
-                <CiHeart />
+                <FaHeart />
                 </div>
             </div>
         </div>
 
         <div className="body">
-            <h6>product name</h6>
+            <h6>{name}</h6>
             <div className="price-animation">
-                <p>119</p>
-                <p>add to cart </p>
+                <div className='price'>
+                    
+                    <p className='sale'>{sale ? `${sale} $` : ""}</p>
+                    <p>{price}   $</p>
+                </div>
+                <p className='cartBtn'>add to cart </p>
             </div>
         </div>
+    </NavLink>
     </div>
+<QuickLook id={slug} product={product} active={active} SetActive={SetActive}></QuickLook>
+</>
   )
 }

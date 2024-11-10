@@ -10,8 +10,8 @@ export default function PaginationContent2() {
     </div>
 
     <div className="img lights">
-      <img loading="lazy" src='//depot.qodeinteractive.com/wp-content/uploads/2017/02/h1-slide2-img1.png' alt='ceilling lights' ></img>
-      <img loading="lazy" src='//depot.qodeinteractive.com/wp-content/uploads/2017/02/h1-slide2-img2.png' alt='ceilling lights' ></img>
+      <img src='//depot.qodeinteractive.com/wp-content/uploads/2017/02/h1-slide2-img1.png' alt='ceilling lights' ></img>
+      <img  src='//depot.qodeinteractive.com/wp-content/uploads/2017/02/h1-slide2-img2.png' alt='ceilling lights' ></img>
     </div>
   </div>
   )

@@ -22,7 +22,7 @@ footer {
         text-transform: uppercase;
         color: $black-colour;
         font-size: 1rem;
-        line-height: 25px;
+        
         letter-spacing: 0.2rem;
         transform: translateX(1rem);
       }
@@ -41,7 +41,7 @@ footer {
           a {
             text-transform: capitalize;
             font-size: 0.8rem;
-            line-height: 1rem;
+            // line-height: 1rem;
             color: $grey-text-colour;
             transition: 0.4s ease-in-out;
           }
@@ -123,4 +123,57 @@ footer {
     footer .menuContainer{
         flex-direction: column;
     }
+}
+
+@media (max-width:665px) {
+
+  footer{
+
+    .menuContainer {
+      
+    .footerList {
+      width: fit-content;
+      .listHeader {
+        font-size: 1.5rem;
+      }
+
+      .footerUl {
+        
+
+        li {
+         
+          a {
+            font-size: 1.5rem;
+            svg{
+              font-size: 1.5rem;
+            }
+            
+          }
+         
+        }
+      }
+    }
+  }
+
+  .testimoniel {
+   
+    p {
+      
+      font-size: 1.25rem;
+      
+    }
+  }
+
+  .socialMedia {
+    
+    p {
+      
+      font-size: 1.5rem;
+    }
+    svg{
+      font-size: 1.5rem;
+    }
+  }
+
+}
 }

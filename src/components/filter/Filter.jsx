@@ -1,28 +1,77 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCaretDown } from "react-icons/fa";
 import "animate.css";
 export default function Filter() {
     const [isHover , setIsHover] = useState(false)
+    const [categoryClicked , setCategoryClicked] = useState(false)
+    const [filterClicked , setFilterClicked] = useState(false)
+   
 
+    
+    function catClicked (){
+     setCategoryClicked(!categoryClicked)
+    }
+    function filterIsClicked (){
+      setFilterClicked(!filterClicked)
+    }
     const hover = {
         display: isHover ? "flex" : "none"
     }
+    const catActive ={
+      
+        display: categoryClicked ? "flex" : "none"
+        
+    }
+    const filterActive ={
+        display: filterClicked ? "flex" : "none"
+    }
   return (
     <div className='filterBar'>
+      <div className="pcCat">
+
       <div className="categories">
+        <button className='categoryBtn'  >
+          Category
+          <FaCaretDown />
+        </button>
+        <div className={`categoryUL`}  >
+
         <input type="button" value="All" />
         <input type="button" value="Accessories" />
         <input type="button" value="Decoration" />
         <input type="button" value="Hardwoods" />
         <input type="button" value="Fancies" />
+        </div>
+      </div>
       </div>
 
 
-      <div className="filterBtn" onMouseEnter={()=> setIsHover(true)} onMouseLeave={()=> setIsHover(false)}>
+      <div className="mobileCat">
+
+      <div className="categories">
+        <button className='categoryBtn'  onClick={catClicked}>
+          Category
+          <FaCaretDown />
+        </button>
+        <div className={`categoryUL`} style={catActive}>
+
+        <input type="button" value="All" />
+        <input type="button" value="Accessories" />
+        <input type="button" value="Decoration" />
+        <input type="button" value="Hardwoods" />
+        <input type="button" value="Fancies" />
+        </div>
+      </div>
+      </div>
+
+
+      <div className="filter" onMouseEnter={()=> setIsHover(true)} onClick={filterIsClicked} onMouseLeave={()=> setIsHover(false)}>
+        <div className="filterBtn">
         <p>Filter</p>
         <FaCaretDown />
+        </div>
 
-    <div className="filterContainer" style={hover}>
+    <div className="filterContainer" style={filterActive}>
         <div className="sort">
             <h6>Sort by</h6>
             <ul>
@@ -35,7 +84,7 @@ export default function Filter() {
             </ul>
         </div>
 
-        <div className="filter">
+        <div className="priceFilter">
             <h6>price range</h6>
             <ul>
                 <li>All</li>

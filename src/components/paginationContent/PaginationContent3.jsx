@@ -10,7 +10,7 @@ export default function PaginationContent3() {
       </div>
 
       <div className="img">
-        <img loading="lazy" src='//depot.qodeinteractive.com/wp-content/uploads/2017/02/h1-slide3-img.jpg' alt='wooden chair' ></img>
+        <img  src='//depot.qodeinteractive.com/wp-content/uploads/2017/02/h1-slide3-img.jpg' alt='wooden chair' ></img>
       </div>
     </div>
   )

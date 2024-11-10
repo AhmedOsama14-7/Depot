@@ -4,4 +4,30 @@
 @import"./Components/navbar";
 @import"./Components/footer";
 @import"./Components/homePagination";
-@import"./Components/shop"
+@import"./Components/shop";
+@import"./Components/quickLook";
+.loader{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $grey-bg;
+
+    svg{
+        font-size:2rem;
+        animation: loader 1s infinite;
+    }
+}
+
+
+@keyframes loader {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
