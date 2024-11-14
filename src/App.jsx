@@ -19,7 +19,10 @@ function App() {
       }
   }
 });
-
+// 1- photo in singleProduct mediaQuery
+// 2- routes container mediaQuery
+// 3- singlePhoto
+// 4- animation loaders
   return (
     <>
     <QueryClientProvider client={queryClient}>

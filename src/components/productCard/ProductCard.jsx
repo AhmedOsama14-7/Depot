@@ -3,12 +3,12 @@ import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import QuickLook from '../quickLook/QuickLook';
 import { NavLink } from 'react-router-dom';
-export default function ProductCard({name , sale , price , salePrec , img , rating , slug , category,isNew , product }) {
-   const [active ,SetActive] = useState(false)
-
-    function open (){
-        SetActive(true)
-    }
+export default function ProductCard({name , sale , price , salePrec , img , onclick , rating , slug , category,isNew , product }) {
+    const handleInnerButtonClick = (e) => {
+        e.stopPropagation(); 
+        e.preventDefault();  
+        
+      };
   return (
 <>
     <div className='productCard'>
@@ -21,10 +21,10 @@ export default function ProductCard({name , sale , price , salePrec , img , rati
             <p>{salePrec ? `${salePrec} %`  : ""}</p>
             </div>
             
-            <div className="quickLook">
+            <div className="quickLook" onClick={handleInnerButtonClick}>
                 <div className='quickLookBtn'>
 
-                <p onClick={open}>quick look</p>
+                <p onClick={() => onclick(product)} >quick look</p>
                 </div>
 
                 
@@ -47,7 +47,7 @@ export default function ProductCard({name , sale , price , salePrec , img , rati
         </div>
     </NavLink>
     </div>
-<QuickLook id={slug} product={product} active={active} SetActive={SetActive}></QuickLook>
+
 </>
   )
 }

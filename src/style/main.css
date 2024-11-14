@@ -876,6 +876,7 @@ footer .socialMedia p {
 .productCard .img .quickLook {
   position: absolute;
   z-index: 2;
+  pointer-events: fill;
   display: flex;
   background-color: #080808;
   width: 50%;
@@ -984,10 +985,14 @@ footer .socialMedia p {
 }
 .routesContainer .routes a {
   color: #929292;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  text-transform: capitalize;
 }
 .routesContainer .routes a.active {
   color: #929292;
+}
+.routesContainer .routes a:hover {
+  color: #080808;
 }
 
 @media (max-width: 1024px) {
@@ -1004,30 +1009,6 @@ footer .socialMedia p {
   }
   .productCard .body .price-animation .price p, .productCard .body .price-animation .cartBtn p {
     font-size: 1rem;
-  }
-}
-@media (max-width: 665px) {
-  .filterBar {
-    padding-left: 6rem;
-  }
-  .productsContainer {
-    justify-content: center;
-    padding-inline: 2rem;
-  }
-  .productCard {
-    width: calc((100% - 8rem) / 1);
-    height: 40rem;
-  }
-  .productCard .img .header p {
-    font-size: 1.5rem;
-  }
-  .productCard .img .quickLook {
-    height: 3rem;
-    padding-left: 1.5rem;
-    bottom: -3rem;
-  }
-  .productCard .img .quickLook p {
-    font-size: 1.5rem;
   }
 }
 @media (max-width: 768px) {
@@ -1120,7 +1101,6 @@ footer .socialMedia p {
   }
   .productsContainer {
     justify-content: center;
-    padding-inline: 2rem;
   }
   .productCard {
     width: calc((100% - 8rem) / 1);
@@ -1135,7 +1115,7 @@ footer .socialMedia p {
     bottom: -3rem;
   }
   .productCard .img .quickLook p {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .productCard .body h6 {
     font-size: 1.5rem;
@@ -1379,6 +1359,528 @@ body {
   }
   .quickLookPage .quickLookSection .info .body .desc {
     width: 90%;
+  }
+}
+.singleProductContent {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f6f6;
+  width: 100vw;
+  height: 80%;
+  gap: 2rem;
+  position: relative;
+  left: -4rem;
+  padding-left: 4rem;
+}
+.singleProductContent .content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.singleProductContent .content .img {
+  width: 60%;
+  height: 80%;
+  background: #f7f6f6;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+.singleProductContent .content .img .bigImg {
+  width: 70%;
+  height: 100%;
+}
+.singleProductContent .content .img .bigImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.singleProductContent .content .img .smallImg {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  width: 20%;
+}
+.singleProductContent .content .img .smallImg .smallImgWrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 10%;
+}
+.singleProductContent .content .img .smallImg .smallImgWrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.singleProductContent .content .img .smallImg .smallImgWrapper img.left {
+  transform-origin: left;
+}
+.singleProductContent .content .img .smallImg .smallImgWrapper img.right {
+  transform-origin: right;
+}
+.singleProductContent .content .img .smallImg .smallImgWrapper img.top {
+  transform-origin: top;
+  transform: scale(1.7);
+}
+.singleProductContent .content .img .smallImg .smallImgWrapper img.bottom {
+  transform-origin: bottom;
+  transform: scale(1.7);
+}
+.singleProductContent .content .info {
+  color: #080808;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+}
+.singleProductContent .content .info .head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  position: relative;
+}
+.singleProductContent .content .info .head svg {
+  position: absolute;
+  right: -1rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+.singleProductContent .content .info .head h3 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.singleProductContent .content .info .head .price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.singleProductContent .content .info .head .price p {
+  font-weight: 100;
+}
+.singleProductContent .content .info .head .price .actuallPrice {
+  font-size: 1.5rem;
+}
+.singleProductContent .content .info .head .price .sale {
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: #929292;
+}
+.singleProductContent .content .info .body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.singleProductContent .content .info .body .stars {
+  display: flex;
+  align-items: center;
+}
+.singleProductContent .content .info .body .desc {
+  color: #929292;
+  font-size: 0.8rem;
+  font-weight: 500;
+  word-spacing: 0.1rem;
+  width: 80%;
+}
+.singleProductContent .content .info .body .categories {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+.singleProductContent .content .info .body .categories h6 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.singleProductContent .content .info .body .categories p {
+  font-weight: 300;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  color: #929292;
+}
+.singleProductContent .content .info .body .buttons {
+  display: flex;
+  width: 80%;
+  height: 3rem;
+  margin-top: 2rem;
+}
+.singleProductContent .content .info .body .buttons .quantity {
+  border: 0.1px solid #929292;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  height: 100%;
+  padding-inline: 1rem;
+  align-items: center;
+  border-right: none;
+  opacity: 0.4;
+}
+.singleProductContent .content .info .body .buttons .quantity .quantityCounter {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.singleProductContent .content .info .body .buttons .quantity .quantityCounter svg {
+  cursor: pointer;
+}
+.singleProductContent .content .info .body .buttons .addToCart {
+  background-color: #080808;
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border: none;
+}
+.singleProductContent .content .info .body .wishlist {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.singleProductContent .content .info .body .wishlist p {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+}
+.singleProductContent .content .info .body .wishlist svg {
+  cursor: pointer;
+}
+.singleProductContent .tabs {
+  position: relative;
+  width: 100vw;
+  left: -4rem;
+  padding-inline: 4rem;
+  margin-top: 2rem;
+}
+.singleProductContent .tabs .tabsBtn {
+  border-bottom: 1px solid #999;
+  display: flex;
+  position: relative;
+  padding-inline: 4rem;
+  left: -4rem;
+  width: 100vw;
+  margin-bottom: 3rem;
+}
+.singleProductContent .tabs .tabsBtn input {
+  border: 1px solid #999;
+  border-bottom: none;
+  color: #080808;
+  padding-inline: 2rem;
+  padding-block: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.singleProductContent .tabs .tabsBtn input.active {
+  color: white;
+  background-color: #080808;
+  border: none;
+}
+.singleProductContent .contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.singleProductContent .contentContainer .Description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.singleProductContent .contentContainer .Description h6 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.singleProductContent .contentContainer .Description p {
+  color: #929292;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+.singleProductContent .contentContainer .addInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.singleProductContent .contentContainer .addInfo h6 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.singleProductContent .contentContainer .addInfo div {
+  display: flex;
+  gap: 1rem;
+}
+.singleProductContent .contentContainer .addInfo div p {
+  color: #929292;
+  font-size: 0.9rem;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.ImgGallery {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-backdrop-filter: brightness(0.4) contrast(1.6);
+          backdrop-filter: brightness(0.4) contrast(1.6);
+  z-index: 5;
+}
+.ImgGallery .swiper {
+  height: 90%;
+  width: 40%;
+}
+.ImgGallery .swiper .swiper-wrapper .swiper-slide .bigImg {
+  width: 100%;
+  height: 100%;
+}
+.ImgGallery .swiper .swiper-wrapper .swiper-slide .bigImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.ImgGallery .swiper .navigation {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 2rem;
+}
+.ImgGallery .swiper .navigation .navigationBtns {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  left: 0;
+}
+.ImgGallery .swiper .navigation .navigationBtns svg {
+  position: absolute;
+  left: 0;
+}
+.ImgGallery .content {
+  width: 50%;
+  height: 80%;
+}
+.ImgGallery .content .smallImg {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  width: 20%;
+}
+.ImgGallery .content .smallImg .smallImgWrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 10%;
+}
+.ImgGallery .content .smallImg .smallImgWrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.ImgGallery .content .smallImg .smallImgWrapper img.left {
+  transform-origin: left;
+}
+.ImgGallery .content .smallImg .smallImgWrapper img.right {
+  transform-origin: right;
+}
+.ImgGallery .content .smallImg .smallImgWrapper img.top {
+  transform-origin: top;
+  transform: scale(1.7);
+}
+.ImgGallery .content .smallImg .smallImgWrapper img.bottom {
+  transform-origin: bottom;
+  transform: scale(1.7);
+}
+
+@media (max-width: 850px) {
+  .singleProductContent {
+    width: 100vw;
+    left: -3rem;
+  }
+  .singleProductContent .content {
+    flex-direction: column;
+  }
+  .singleProductContent .content .img {
+    width: 100%;
+  }
+  .singleProductContent .content .info {
+    width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .singleProductContent {
+    align-items: center;
+    width: 100vw;
+  }
+  .singleProductContent .tabs {
+    left: -2rem;
+  }
+  .singleProductContent .tabs .contentContainer .addInfo h6 {
+    font-size: 1.5rem;
+  }
+  .singleProductContent .tabs .contentContainer .addInfo div p {
+    font-size: 1.25rem;
+  }
+  .singleProductContent .tabs .contentContainer .Description h6 {
+    font-size: 1.5rem;
+  }
+  .singleProductContent .tabs .contentContainer .Description p {
+    font-size: 1.25rem;
+  }
+  .singleProductContent .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .singleProductContent .content .img {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  .singleProductContent .content .img .smallImg {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .singleProductContent .content .img .smallImg .smallImgWrapper {
+    width: calc((100% - 1rem) / 2);
+  }
+  .singleProductContent .content .info {
+    width: 100%;
+  }
+  .singleProductContent .content .info .head h3 {
+    font-size: 2.25rem;
+  }
+  .singleProductContent .content .info .head .price {
+    font-size: 2rem;
+  }
+  .singleProductContent .content .info .body .desc {
+    font-size: 1.5rem;
+  }
+  .singleProductContent .content .info .body .categories p {
+    font-size: 1rem;
+  }
+  .singleProductContent .content .info .body .categories h6 {
+    font-size: 1.25rem;
+  }
+  .singleProductContent .content .info .body .wishlist p {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 460px) {
+  .singleProductContent {
+    align-items: center;
+    width: 105vw;
+  }
+  .singleProductContent .tabs .tabsBtn {
+    display: flex;
+    flex-direction: column;
+  }
+  .singleProductContent .tabs .tabsBtn input {
+    width: 100%;
+    height: 5rem;
+    font-size: 1.5rem;
+  }
+  .singleProductContent .tabs .contentContainer .addInfo h6 {
+    font-size: 2rem;
+  }
+  .singleProductContent .tabs .contentContainer .addInfo div p {
+    font-size: 1.5rem;
+  }
+  .singleProductContent .tabs .contentContainer .Description h6 {
+    font-size: 2rem;
+  }
+  .singleProductContent .tabs .contentContainer .Description p {
+    font-size: 1.5rem;
+  }
+  .singleProductContent .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .singleProductContent .content .img {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  .singleProductContent .content .img .smallImg {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .singleProductContent .content .img .smallImg .smallImgWrapper {
+    width: calc((100% - 1rem) / 2);
+  }
+  .singleProductContent .content .info {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+  .singleProductContent .content .info .head h3 {
+    font-size: 2.5rem;
+  }
+  .singleProductContent .content .info .head .price .actuallPrice {
+    font-size: 2rem;
+  }
+  .singleProductContent .content .info .body .desc {
+    font-size: 1.5rem;
+    width: 90%;
+  }
+  .singleProductContent .content .info .body .categories p {
+    font-size: 1rem;
+  }
+  .singleProductContent .content .info .body .categories h6 {
+    font-size: 1.25rem;
+  }
+  .singleProductContent .content .info .body .buttons {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 90%;
+    gap: 1rem;
+  }
+  .singleProductContent .content .info .body .buttons .addToCart, .singleProductContent .content .info .body .buttons .quantity {
+    width: 100%;
+    height: 4rem;
+    font-size: 1.25rem;
+  }
+  .singleProductContent .content .info .body .buttons .quantity div p {
+    font-size: 1.5rem;
+  }
+  .singleProductContent .content .info .body .buttons .quantity .quantityCounter svg {
+    font-size: 2rem;
+  }
+  .singleProductContent .content .info .body .buttons .quantity .quantityCounter p {
+    font-size: 2rem;
+  }
+  .singleProductContent .content .info .body .wishlist p {
+    font-size: 1.25rem;
   }
 }
 .loader {

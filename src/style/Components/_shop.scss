@@ -190,7 +190,7 @@
         .quickLook{
             position: absolute;
             z-index: 2;
-            
+            pointer-events: fill;
             display: flex;
             background-color: $black-colour;
             width: 50%;
@@ -313,15 +313,21 @@
         p{
 
             color: $grey-text-colour;
+
         }
         
         a{
             color: $grey-text-colour;
-            font-size:1rem;
+            font-size:.8rem;
+            text-transform: capitalize;
             
             &.active{
                 color: $grey-text-colour;
 
+            }
+
+            &:hover{
+                color: $black-colour;
             }
 
         }
@@ -367,36 +373,6 @@
         }
     }
     
-    @media (max-width:665px) {
-        .filterBar{
-            padding-left: 6rem;
-        }
-        .productsContainer{
-            justify-content: center;
-            padding-inline: 2rem;
-        }
-        .productCard{
-            width: calc((100% - 8rem) / 1);
-            height: 40rem;
-            .img{
-                .header{
-                    p{
-                        font-size: 1.5rem;
-                    }
-                }
-    
-                .quickLook{
-                    height: 3rem;
-                    padding-left: 1.5rem;
-                    bottom: -3rem;
-                    p{
-                        font-size: 1.5rem;
-    
-                    }
-                }
-            }
-    }
-}
 
 @media (max-width:768px) {
     .productCard{
@@ -517,7 +493,7 @@
     }
     .productsContainer{
         justify-content: center;
-        padding-inline: 2rem;
+        
     }
     .productCard{
         width: calc((100% - 8rem) / 1);
@@ -534,7 +510,7 @@
                 padding-left: 1.5rem;
                 bottom: -3rem;
                 p{
-                    font-size: 1.5rem;
+                    font-size: 1rem;
 
                 }
             }

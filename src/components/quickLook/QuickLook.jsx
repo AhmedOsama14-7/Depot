@@ -4,8 +4,8 @@ import { FaXmark } from "react-icons/fa6";
 import toast, { Toaster } from 'react-hot-toast';
 import { CiHeart } from "react-icons/ci";
 import { getSingleproduct } from "../../api/api";
-export default function QuickLook({id , active , SetActive , product}) {
-
+export default function QuickLook({  active , SetActive , product}) {
+ 
   const [counter , SetCounter] =  useState(1)
   const [unactive , setUnactive] = useState(true)
   const [heartBtn , SetHeartBtn] = useState(false)
@@ -79,8 +79,8 @@ export default function QuickLook({id , active , SetActive , product}) {
         <FaXmark onClick={close}/>
         <h3>{product.name}</h3>
         <div className="price">
-        <p className='actuallPrice'>{product.price}  $</p>
-        <p className='sale'>{product.sale ? `${product.sale}  $`: "" }  </p>
+         <p className='actuallPrice'>{product.price}  $</p>
+        <p className='sale'>{product.sale ? `${product.sale}  $`: "" }  </p>  
         </div>
 
         </div>
