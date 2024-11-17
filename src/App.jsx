@@ -10,6 +10,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import { CategoryProvider } from './context/CategoryContext'
 function App() {
   
   const queryClient = new QueryClient({
@@ -19,16 +20,19 @@ function App() {
       }
   }
 });
-// 1- photo in singleProduct mediaQuery
-// 2- routes container mediaQuery
-// 3- singlePhoto
-// 4- animation loaders
+
+// 1 - Filter and sort
+// 2 - Validation And Login
+
   return (
     <>
+      <CategoryProvider>
     <QueryClientProvider client={queryClient}>
+
       <RouterProvider router={routes}></RouterProvider>
       
     </QueryClientProvider>  
+      </CategoryProvider>
     
      
     </>

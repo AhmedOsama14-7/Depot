@@ -40,7 +40,7 @@ export default function Navbar() {
 
         <div className="acountContainer">
           <FaRegUser />
-          <NavLink to={"/"}>Login</NavLink>
+          <NavLink to={"/logIn"}>Login</NavLink>
         </div>
       </div>
 

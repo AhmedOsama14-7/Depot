@@ -14,20 +14,21 @@ import PaginationContent1 from '../paginationContent/PaginationContent1';
 import PaginationContent2 from '../paginationContent/PaginationContent2';
 import PaginationContent3 from '../paginationContent/PaginationContent3';
 import { Navigation } from 'swiper/modules'; // Import the navigation module
-export default function ImgGallerySwipper({img1 , img2 , img3 , img4}) {
+export default function ImgGallerySwipper({img1 , img2 , img3 , img4, img5}) {
 
+  const slides = [
+    { id: 1, content: img1 },
+    { id: 2, content: img2 },
+    { id: 3, content: img3  },
+    { id: 4, content: img4  },
+    { id: 5, content: img5  }
+   
+  ];
         const swiperRef = useRef(null); // Reference to the Swiper instance
         const [currentIndex, setCurrentIndex] = useState(0);
         const [currentSlide, setCurrentSlide] = useState(1);
-        const [totalSlides, setTotalSlides] = useState(0);
+        const [totalSlides, setTotalSlides] = useState(slides.length);
 
-        const slides = [
-          { id: 1, content: img1 },
-          { id: 2, content: img2 },
-          { id: 3, content: img3  },
-          { id: 4, content: img4  }
-         
-        ];
       
       
       
@@ -39,15 +40,35 @@ export default function ImgGallerySwipper({img1 , img2 , img3 , img4}) {
         }; 
 
         
-             function slideChange () {
-              // Update the current slide index
-              setCurrentSlide(this.realIndex + 1); // `realIndex` is the actual slide index (0-based)
+             function slideChangeInc (e) {
+              if(currentSlide < 4){
+
+                setCurrentSlide(currentSlide + 1);
+                e.stopPropagation(); 
+                e.preventDefault();  
+              } else{
+                setCurrentSlide(1)
+                e.stopPropagation(); 
+                e.preventDefault(); 
+              }
+            
+             
+            } 
+             function slideChangeDec (e) {
+             if( currentSlide > 0){
+              setCurrentSlide(currentSlide - 1)
+              e.stopPropagation(); 
+              e.preventDefault(); 
+             } else{
+              setCurrentSlide(slides.length)
+
+              e.stopPropagation(); 
+              e.preventDefault(); 
+             }
+          
             } 
             
-             function init () {
-        
-              setTotalSlides(this.slides.length); 
-            }
+            
           
     
   return (
@@ -56,7 +77,7 @@ export default function ImgGallerySwipper({img1 , img2 , img3 , img4}) {
         ref={swiperRef}
         modules={[Navigation]}
         onSlideChange={handleSlideChange}
-        spaceBetween={30}
+        spaceBetween={150}
         slidesPerView={1}
         navigation={{
           nextEl: '.swiper-button-next', // Next button selector
@@ -84,8 +105,8 @@ export default function ImgGallerySwipper({img1 , img2 , img3 , img4}) {
       <div className="navigation">
       
             <div className="navigationBtns">
-            <PiCaretLeftBold className='swiper-button-prev' />
-            <PiCaretRightBold className='swiper-button-next'  />
+            <PiCaretLeftBold className='swiper-button-prev' onClick={slideChangeDec}/>
+            <PiCaretRightBold className='swiper-button-next'  onClick={slideChangeInc} />
             </div>
 
             <div className="slideNo">
@@ -96,7 +117,7 @@ export default function ImgGallerySwipper({img1 , img2 , img3 , img4}) {
             </div>
 
             <div className="Xmark">
-            <HiXMark />
+            <HiXMark  />
             </div>
       
       </div>

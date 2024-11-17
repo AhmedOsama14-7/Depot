@@ -5,6 +5,7 @@ import HomePage from '../pages/homePage/HomePage';
 import Shop from '../pages/shop/Shop';
 import SingleProduct from '../pages/singleProduct/SingleProduct';
 import ProductsContainer from '../components/productsContainer/ProductsContainer';
+import LoginPage from '../pages/loginPage/LoginPage';
 
     export const routes = createBrowserRouter([
         {
@@ -14,6 +15,7 @@ import ProductsContainer from '../components/productsContainer/ProductsContainer
                     {index:true , element:<ProductsContainer ></ProductsContainer> },
                     {path:"singleProduct/:id" , element: <SingleProduct></SingleProduct>}
                 ]},
+                {path:"/logIn" , element: <LoginPage></LoginPage>}
                 
             ]
         }

@@ -35,7 +35,7 @@ export default function SideMenu({ isOpen, toggleMenu }) {
 
         <li>
           <FaRegUser />
-          <NavLink to={"/"}>Login</NavLink>
+          <NavLink to={"/logIn"}>Login</NavLink>
         </li>
       </ul>
     </div>

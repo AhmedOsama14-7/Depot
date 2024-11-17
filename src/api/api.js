@@ -13,3 +13,10 @@ export const getSingleproduct = (slug) => {
         queryFn: () => AxiosConfig(`products/${slug}?populate=*`),
     });
 };
+
+export const getSponsors = () => {
+    return useQuery({
+        queryKey : ["sponsors"],
+        queryFn: () => AxiosConfig(`sponsors/?populate=*`)
+    })
+}
